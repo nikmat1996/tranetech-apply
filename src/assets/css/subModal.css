@@ -1,0 +1,120 @@
+.subModal {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-block: 10em;
+  gap: 5vw;
+  flex-wrap: wrap;
+}
+
+.subModal__left {
+  flex: 1 1 350px;
+}
+
+.subModal__left > h3 {
+  color: #faae34;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+.subModal__left h2 {
+  margin: 0;
+  box-sizing: border-box;
+  color: rgb(35, 35, 35);
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 40px;
+}
+
+.subModal__left > p {
+  color: rgb(111, 111, 111);
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.subModal__left > button {
+  background-color: rgb(250, 174, 52);
+  border: none;
+  letter-spacing: 0.5px;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px 24px;
+  text-transform: uppercase;
+  margin-top: 1.75em;
+}
+
+.subModal__left > button:hover {
+  color: #6f6f6f;
+  background-color: black;
+}
+
+.subModal__figureWrapper {
+    padding-block-start: 2rem;
+  flex: 1 1 400px;
+  display: flex;
+  overflow: hidden;
+}
+
+.subModal__figureWrapper > figure {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  margin: 0;
+  padding-inline: 1em;
+  animation: slide 6s ease  infinite;
+}
+
+@keyframes slide {
+  45% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+
+  95% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translate(0%);
+  }
+}
+
+.subModal__figureWrapper > figure > img {
+    max-width: 100%;
+}
+
+.subModal__figureWrapper > figure > div { 
+    height: 0.25em;
+    width: 10%;
+    position: relative;
+    top: 2%;
+    background-color: rgb(250, 174, 52);
+}
+
+.subModal__figureWrapper > figure > h4 {
+  color: rgb(35, 35, 35);
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.subModal__figureWrapper > figure > p {
+  color: rgb(111, 111, 111);
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}

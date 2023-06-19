@@ -1,0 +1,39 @@
+.navbar{
+    display: block;
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 5px 10px -10px rgba(0,0,0,.6);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+}
+
+.navbar > ul {
+    list-style: none;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.navbar > ul > li {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: .015em;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.navbar img {
+    height: 4.8rem;
+    margin: 0;
+    vertical-align: bottom;
+}
+
+.navbar > div {
+    min-height: 2.25rem;
+    background-color: rgba(247,171,52,1);
+}

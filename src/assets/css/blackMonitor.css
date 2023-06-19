@@ -1,0 +1,35 @@
+.blackMonitor {
+    padding-block: 1.5em;
+}
+
+.blackMonitor > * {
+    display: block;
+    margin-inline: auto;
+    width: 90%;
+    max-width: 1006px;
+    color: #FFF;
+}
+
+.blackMonitor > h2 {
+    width: 90%;
+    max-width: 847px;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-block: 0.7em 0;
+}
+
+.blackMonitor > p {
+    width: 90%;
+    max-width: 847px;
+    color: rgb(255, 255, 255);
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    margin-block: 1em 2em;
+}

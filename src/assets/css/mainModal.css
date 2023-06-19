@@ -1,0 +1,136 @@
+.mainModal {
+  width: 100%;
+  margin-top: -2rem;
+}
+
+.mainModal__imgBg {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+
+.mainModal__img {
+  opacity: 0;
+  animation: opacity 700ms linear forwards;
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
+
+.mainModal__animatedBox {
+  width: 610px;
+  height: 0px;
+  background-color: #fff;
+  position: absolute;
+  top: 15em;
+  left: clamp(5vw, 18vw, 18vw);
+  opacity: 0.9;
+  animation: trialAnimation 500ms ease-in-out forwards ;
+}
+
+@keyframes trialAnimation {
+  to {
+    height: 350px;
+  }
+}
+
+.mainModal__animatedBox-textWrapper {
+  padding: 10% 6.5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.mainModal__animatedBox-textWrapper > div {
+  overflow: hidden;
+}
+
+.mainModal__animatedBox-textWrapper > div  > * {
+    position: relative;
+    margin: 0;
+    color: rgb(35, 35, 35);
+    font-size: 3.5rem;
+    opacity: 0;
+}
+
+.mainModal__animatedBox-textWrapper  p {
+    color: #faae34;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: underline;
+    opacity: 1;
+    transform: translateY(-100%);
+    animation: dropdown 0.3s ease-in-out 0.5s forwards;    
+}
+
+.mainModal__animatedBox-textWrapper h1 {
+    font-weight: 500;
+    padding-block-start: 1rem;
+    transform: translateY(-100%);
+    animation: dropdown 0.3s ease-in-out 0.9s forwards;    
+
+}
+
+.mainModal__animatedBox-textWrapper h2 {
+    padding-block-start: 0.8rem;
+    white-space: normal;
+    font-weight: 800;
+    transform: translateY(-100%);
+    animation: dropdown 0.3s ease-in-out 1.2s forwards;    
+}
+
+.mainModal__animatedBox-button {
+    font-family: "Montserrat", sans-serif;
+    padding-inline: 2.25rem;
+    padding-block: 1.25rem;
+    position: absolute;
+    inset: auto 1rem 0 auto;
+    background-color: rgb(250, 174, 52);
+    font-weight: 600;
+    box-shadow: rgb(153, 153, 153) 0px 0px 0px 0px;
+    border: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+    transform: translateY(100%);
+    opacity: 0;
+    animation: dropdown 0.3s ease-in 1.5s forwards;    
+}
+
+.mainModal__animatedBox-button:hover {
+    color: #6f6f6f;;
+    background-color: black;
+}
+
+@keyframes dropdown {
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+} 
+    
+.mainModal__buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    top: 15em;
+    padding-inline: 2em;
+    transform: translateY(175px);   
+}
+
+.mainModal__buttonWrapper > button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
