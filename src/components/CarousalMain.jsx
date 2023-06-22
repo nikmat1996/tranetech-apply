@@ -1,92 +1,97 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../assets/css/carousalMain.css";
-
-const data = [
-  {
-    id: 1,
-  },
-  {
-    id: 2,
-  },
-  {
-    id: 3,
-  },
-  {
-    id: 4,
-  },
-];
-
-const numOfItemsDisplayed = 3;
-
-
-
+import { carousalMainData as data } from './DATA'
+import BunchOfButtons from "./BunchOfButtons";
+import Card from "./Card";
 
 const CarousalMain = () => {
-
+  
   const [pos, setPos] = useState(0);
+  const [numOfItemsDisplayed, setNumOfItemsDisplayed] = useState(3);
+  
   const trackRef = useRef()
+  const mouseOver = useRef(false)
+  
+  let slideInterval, mouseOverTimeout, slideOnce, time = 3300;
   
   useEffect(() => {
 
-    if (pos === 4){
-      
-      setTimeout(() => {
-        for (let slide of trackRef.current.children) {
-          slide.style.transition = "transform 0s"
-          console.log(slide)
-        }
-       
-        setPos(0)
-      }, 300);}
+    if (mouseOver.current == false) {
+      if (pos === data.length) {
+        setTimeout(() => {
+          addTransition()
+          setPos(0)
+        }, 300);
 
-    const slideInterval = setInterval(() => {
-      for (let slide of trackRef.current.children) {
-        slide.style.transition = "transform 0.3s"
+        setTimeout(() => addTransition(300), 320)
+
+        slideOnce = setTimeout(() => {
+          setPos(pre => pre + 1)
+        }, time)
       }
-      setPos(prevPos => prevPos === data.length ? 1 : prevPos + 1)
-    }, 2000)
-    
+
+      startAnimation()
+    }
     return () => {
       console.log('cleaning', pos)
       clearInterval(slideInterval)
     }
   }, [pos])
+
+  function addTransition(duration = 0) {
+    for (let slide of trackRef.current.children) {
+      slide.style.transition = `transform ${duration}ms ease-in-out`
+    }
+  }
+
+  function startAnimation() {
+    slideInterval = setInterval(() => {
+      addTransition(300)
+      setPos(pre => pre + 1)
+    }, time)
+  }
+
+  function stopAnimation() {
+    clearInterval(slideInterval)
+    clearTimeout(mouseOverTimeout)
+    clearTimeout(slideOnce)
+  }
   
-  const slideStyle = {
+  const SLIDE_STYLE = {
     transform: `translateX(-${100 * pos}%)`,
   }
  
-  console.log(pos)
+  const handleMouseEnter = () => {
+    mouseOver.current = true
+    stopAnimation()
+  }
+
+  const handleMouseLeave = () => {
+    mouseOver.current = false
+    mouseOverTimeout = setTimeout(() => setPos(pos => pos + 1), time)    
+  }
 
   return (
-    <section>
+    <section className="carousal_section" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="track" ref={trackRef}>
       
         {[...data.map((item) => (
-          <div key={item.id} className="slide" style={slideStyle}>
-            {item.id}
+          <div key={item.id} className="slide" style={SLIDE_STYLE}>
+            <Card data={item} />
           </div>
         )),
           
-          //repeated divs for filler
+          //repeated slides for filler
           ...new Array(numOfItemsDisplayed).fill().map((_, i) => (
-            <div key={data[i].id +"i"} className="slide" style={slideStyle}>
-              {data[i].id}
+            <div key={data[i].id +"i"} className="slide" style={SLIDE_STYLE}>
+              <Card data={data[i]} />
             </div>
           ))
         ]}
       
       </div>
 
-      <ul className="slide__button-wrapper" >
-        {data.map((_, i) => (
-          <li
-            key={i}
-            className={'slide__button ' + (pos % data.length === i && 'active')}
-            onClick={() => setPos(i)}
-          />))
-        }
-      </ul>
+      <BunchOfButtons data={data} setPos={setPos} pos={pos} />
     </section>
   );
 };

@@ -12,6 +12,14 @@ import subModal1 from "../assets/images/subModal1.webp"
 import subModal2 from "../assets/images/subModal2.webp"
 import subModal3 from "../assets/images/subModal3.webp"
 import monitor from "../assets/images/monitor.webp"
+import carousalMain1 from "../assets/images/carousalMain1.webp"
+import carousalMain2 from "../assets/images/carousalMain2.webp"
+import carousalMain3 from "../assets/images/carousalMain3.webp"
+import carousalMain4 from "../assets/images/carousalMain4.webp"
+import carousalMain5 from "../assets/images/carousalMain5.webp"
+import carousalMain6 from "../assets/images/carousalMain6.webp"
+import carousalMain7 from "../assets/images/carousalMain7.webp"
+
 
 
 
@@ -66,4 +74,43 @@ const subModalData = [
     },
 ]
 
-export { mainModalData, subModalData }
+const carousalMainData = [
+    {
+        'id': 1,
+        'img': carousalMain1,
+        'p': 'Our property management system is ideal for the real estate property manager, owners, and agents.',
+        'title': 'EQUAL Property Management'
+    },{
+        'id': 2,
+        'img': carousalMain2,
+        'p': 'EQUAL the intuitive and most reliable facility management software that helps to drive workplace performance.',
+        'title': 'EQUAL Facility Management'
+    },{
+        'id': 3,
+        'img': carousalMain3,
+        'p': 'EQUAL all-in-one workforce management system to automate and digitalize all the HR-related manual tasks.',
+        'title': 'EQUAL HRMS'
+    },{
+        'id': 4,
+        'img': carousalMain4,
+        'p': 'EQUAL VAT compliant fully functional Financial Accounting system streamlines the entire financial process.',
+        'title': 'EQUAL Accounting'
+    },{
+        'id': 5,
+        'img': carousalMain5,
+        'p': 'EQUAL easy-to-use cloud-based cleaning management system to manage the mobile workforce more efficiently.  ',
+        'title': 'EQUAL Cleaning Management'
+    },{
+        'id': 6,
+        'img': carousalMain6,
+        'p': 'Our comprehensive EQUAL club management system manages all aspects of the event planning business.',
+        'title': 'EQUAL Club Management'
+    },{
+        'id': 7,
+        'img': carousalMain7,
+        'p': 'Integrated with the latest features EQUAL building maintenance application improves the efficiency of the mobile workforce.',
+        'title': 'EQUAL Building Maintenance Application'
+    }
+]
+
+export { mainModalData, subModalData, carousalMainData }
