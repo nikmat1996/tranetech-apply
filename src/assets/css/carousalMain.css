@@ -1,5 +1,6 @@
-.carousal_section{
-    
+.carousal{
+    padding-block: 6rem;
+    /* padding-block-end: 3rem;  */
 }
 
 .track {
@@ -8,35 +9,13 @@
     display: flex;
     overflow-x: hidden;
     --numOfItemsDisplayed: 3;
-    padding-block: 4rem;
+    padding-block-end: 2rem; 
 }
 
 .slide {
     box-sizing: border-box;
-    /* flex: 1 0 calc(100%/var(--numOfItemsDisplayed)); */
     flex-shrink: 0;
     width: calc(100%/var(--numOfItemsDisplayed));
     padding: 1rem;
     transition: transform 0.3s ease-in-out;
-}
-
-.slide__button-wrapper {
-    display: flex;
-    gap: 0.5rem;
-    width: max-content;
-    margin-inline: auto;
-    padding: 0;
-    margin-block-start: -0.5rem;
-}
-
-.slide__button {
-    height: 0.55rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    list-style: none;
-    background-color: grey;
-}
-
-.active {
-    background-color: black;
 }

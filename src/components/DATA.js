@@ -19,6 +19,12 @@ import carousalMain4 from "../assets/images/carousalMain4.webp"
 import carousalMain5 from "../assets/images/carousalMain5.webp"
 import carousalMain6 from "../assets/images/carousalMain6.webp"
 import carousalMain7 from "../assets/images/carousalMain7.webp"
+import subCarousalImg_1 from "../assets/images/sub_carousal_img1.png"
+import subCarousalImg_2 from "../assets/images/sub_carousal_img2.webp"
+import subCarousalImg_3 from "../assets/images/sub_carousal_img3.png"
+import subCarousalImg_4 from "../assets/images/sub_carousal_img4.png"
+import subCarousalImg_5 from "../assets/images/sub_carousal_img5.png"
+import subCarousalImg_6 from "../assets/images/sub_carousal_img6.png"
 
 
 
@@ -113,4 +119,32 @@ const carousalMainData = [
     }
 ]
 
-export { mainModalData, subModalData, carousalMainData }
+const carousalSubData = [
+    {
+        'img': subCarousalImg_1,
+        'h3': 'Search Engine Optimization',
+        'p': 'Team of experts creating tailor-made online marketing strategies to help...'
+    },{
+        'img': subCarousalImg_2,
+        'h3': 'ERP Solutions',
+        'p': 'Drive your business from one place with our single, scalable, and fully integrated...'
+    },{
+        'img': subCarousalImg_3,
+        'h3': 'Application Development',
+        'p': 'Determined tech support throughout the entire mobile app development strategy...'
+    },{
+        'img': subCarousalImg_4,
+        'h3': 'Web Designing & Development',
+        'p': 'We turn ideas into digital solutions with our result-oriented web design...'
+    },{
+        'img': subCarousalImg_5,
+        'h3': 'Branding & Digital Marketing',
+        'p': 'We are the creative and full-service digital agency providing sharper ideas for...'
+    },{
+        'img': subCarousalImg_6,
+        'h3': 'Creative Designing',
+        'p': 'We create stunning yet affordable designs for all your projects...'
+    },
+]
+
+export { mainModalData, subModalData, carousalMainData, carousalSubData }

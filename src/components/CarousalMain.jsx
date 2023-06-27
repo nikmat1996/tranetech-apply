@@ -4,6 +4,7 @@ import { carousalMainData as data } from './DATA'
 import BunchOfButtons from "./BunchOfButtons";
 import Card from "./Card";
 
+let slideInterval, mouseOverTimeout, slideOnce, time = 3300;
 const CarousalMain = () => {
   
   const [pos, setPos] = useState(0);
@@ -12,7 +13,6 @@ const CarousalMain = () => {
   const trackRef = useRef()
   const mouseOver = useRef(false)
   
-  let slideInterval, mouseOverTimeout, slideOnce, time = 3300;
   
   useEffect(() => {
 
@@ -72,7 +72,7 @@ const CarousalMain = () => {
   }
 
   return (
-    <section className="carousal_section" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <section className="carousal" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <div className="track" ref={trackRef}>
       
         {[...data.map((item) => (
@@ -82,11 +82,11 @@ const CarousalMain = () => {
         )),
           
           //repeated slides for filler
-          ...new Array(numOfItemsDisplayed).fill().map((_, i) => (
-            <div key={data[i].id +"i"} className="slide" style={SLIDE_STYLE}>
+          ...new Array(numOfItemsDisplayed).fill().map((_, i) =>
+            <div key={data[i].id + "i"} className="slide" style={SLIDE_STYLE}>
               <Card data={data[i]} />
             </div>
-          ))
+          )
         ]}
       
       </div>

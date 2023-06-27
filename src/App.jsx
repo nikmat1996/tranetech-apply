@@ -5,6 +5,7 @@ import MainModal from './components/MainModal'
 import SubModal from './components/SubModal'
 import BlackMonitor from './components/BlackMonitor'
 import CarousalMain from './components/CarousalMain'
+import InfinteCarousal from './components/InfinteCarousal'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <SubModal />
       <BlackMonitor />
       <CarousalMain />
+      <InfinteCarousal />
     </>
   )
 }

@@ -1,0 +1,40 @@
+.subCarousalCard--wrapper {
+    background-color: white;
+    text-align: left;
+}
+
+.subCarousalCard--img{
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    /* max-width: 100%; */
+}
+
+.subCarousalCard--h3{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 23px;
+    padding: 30px 30px 15px;
+    color: rgb(35, 35, 35);
+    transition: color 0.3s ease-in-out;
+    letter-spacing: 1px;
+    
+}
+
+.subCarousalCard--h3:hover {
+    color: rgb(250, 174, 52);
+}
+
+.subCarousalCard--p{
+    box-sizing: border-box;
+    margin: 0;
+    padding-inline: 30px;
+    padding-block-end: 55px;
+    color: rgb(111, 111, 111);
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    font-family: Roboto, sans-serif;
+    
+}

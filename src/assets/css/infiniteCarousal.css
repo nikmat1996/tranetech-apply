@@ -1,0 +1,41 @@
+
+.track_secondCarousal{
+    width: 100%;
+}
+
+.slide_secondCarousal{
+    padding: 25px;
+}
+.carousalSub_wrapper {
+    background-color: rgb(247, 247, 247);
+    /* background-color: rgb(205, 38, 38);    delete */
+    padding-block: 50px 3rem;
+}
+.carousal_section{
+    width: min(90%, 1170px);
+    margin-inline: auto;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+}
+
+.carousal_section > * {
+    margin: 0 auto;
+    /* margin-inline: auto; */
+}
+
+.carousal_section-p{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    width: fit-content;
+    color: #858585;
+}
+
+.carousal_section-h2{
+    padding-block: 0.5rem 25px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 40px;
+    width: min(760px, 100%);
+}
+

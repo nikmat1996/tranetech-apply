@@ -1,4 +1,5 @@
 import React from 'react'
+import "../assets/css/bunchOfButtons.css";
 
 const BunchOfButtons = (props) => {
     const { data, pos, setPos } = props

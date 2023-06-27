@@ -1,0 +1,21 @@
+.slide__button-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    width: max-content;
+    margin-inline: auto;
+    padding: 0;
+    margin-block-start: -0.5rem;
+}
+
+.slide__button {
+    height: 0.55rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    list-style: none;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.active {
+    background-color: black;
+}
