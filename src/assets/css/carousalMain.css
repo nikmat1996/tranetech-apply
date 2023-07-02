@@ -1,5 +1,6 @@
 .carousal{
     padding-block: 6rem;
+    overflow: hidden;
     /* padding-block-end: 3rem;  */
 }
 
@@ -7,12 +8,15 @@
     width: min(90%, 1170px);
     margin-inline: auto;
     display: flex;
-    overflow-x: hidden;
-    --numOfItemsDisplayed: 3;
+    overflow: hidden;
+    box-sizing: border-box;
     padding-block-end: 2rem; 
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(50%);
 }
 
 .slide {
+    --numOfItemsDisplayed: 3;
     box-sizing: border-box;
     flex-shrink: 0;
     width: calc(100%/var(--numOfItemsDisplayed));

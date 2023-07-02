@@ -19,6 +19,7 @@
     color: rgb(35, 35, 35);
     transition: color 0.3s ease-in-out;
     letter-spacing: 1px;
+    cursor: pointer;
     
 }
 

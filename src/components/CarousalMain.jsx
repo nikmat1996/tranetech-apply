@@ -60,6 +60,10 @@ const CarousalMain = () => {
   const SLIDE_STYLE = {
     transform: `translateX(-${100 * pos}%)`,
   }
+
+  const TRACK_STYLE = {
+    transform: "translateY(0%)"
+  }
  
   const handleMouseEnter = () => {
     mouseOver.current = true
@@ -73,7 +77,7 @@ const CarousalMain = () => {
 
   return (
     <section className="carousal" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className="track" ref={trackRef}>
+      <div className="track" style={TRACK_STYLE} ref={trackRef}>
       
         {[...data.map((item) => (
           <div key={item.id} className="slide" style={SLIDE_STYLE}>

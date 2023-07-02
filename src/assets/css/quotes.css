@@ -1,0 +1,44 @@
+.quotesSection {
+    padding-block: 50px;
+}
+
+.quotesTitle_wrapper {
+    width: min(780px, 90%);
+    margin-inline: auto;
+    margin-block-end: 47px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-inline: 15px;
+}
+
+.quotesTitle_wrapper > h2 {
+    color: rgb(250, 174, 52);
+    font-size: 12px;
+    line-height: 20px;
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-block-end: 10px;
+}
+
+.quotesTitle_wrapper > p {
+    font-family: Montserrat, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 0.75px;
+}
+
+.quoteTrack {
+    
+    width: min(780px, 90%);
+    box-sizing: border-box;
+}
+
+.quoteSlide{
+    padding: 0;
+    padding-inline: 15px;
+    --numOfItemsDisplayed: 1;
+    text-align: center;
+
+}

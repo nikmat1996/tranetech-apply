@@ -25,6 +25,9 @@ import subCarousalImg_3 from "../assets/images/sub_carousal_img3.png"
 import subCarousalImg_4 from "../assets/images/sub_carousal_img4.png"
 import subCarousalImg_5 from "../assets/images/sub_carousal_img5.png"
 import subCarousalImg_6 from "../assets/images/sub_carousal_img6.png"
+import quoteImg_1 from "../assets/images/quoteImg-1.png"
+import quoteImg_2 from "../assets/images/quoteImg-2.png"
+import quoteImg_3 from "../assets/images/quoteImg-3.png"
 
 
 
@@ -147,4 +150,44 @@ const carousalSubData = [
     },
 ]
 
-export { mainModalData, subModalData, carousalMainData, carousalSubData }
+const skillsData = [
+    {
+        'skill': 'development',
+        'level': 90,
+        'items': ['Website', 'Application', 'ERP', 'Software']
+    },{
+        'skill': 'design',
+        'level': 80,
+        'items': ['Branding', 'Brochure', 'Digital Media Assets']
+    },{
+        'skill': 'marketing',
+        'level': 90,
+        'items': ['Email', 'Digital Media', 'Social Media']
+    },{
+        'skill': 'seo',
+        'level': 90,
+        'items': ['Analytics', 'Content', 'Links']
+    }
+]
+
+const quotesData = [
+    {
+        id: 1,
+        img: quoteImg_1,
+        p: 'TEAM TRANETECH did an excellent job with our Website development project. They took care of everything right from Website development, video animation to product photography. The team was highly professional and clearly understood our vision to deliver the same.'
+    },{
+        id: 2,
+        img: quoteImg_2,
+        p: 'A fantastic solution for all business needs. We have been able to solve major business issues using Tranetech’s customized ERP solutions. Implementing the system has definitely been a game-changer for us.'
+    },{
+        id: 3,
+        img: quoteImg_3,
+        p: 'Highly recommended software for tapping new business potentials. The ERP software transformed our way of working by automating the processes and benefited our business considerably.'
+    },
+]
+
+export { mainModalData, subModalData, carousalMainData, carousalSubData, skillsData, quotesData }
+
+
+
+

@@ -1,0 +1,37 @@
+.skill {
+    color: rgb(255, 255, 255);
+}
+
+.skill > p {
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+.skill__percentage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill__percentage > div {
+    width: 96%;
+}
+
+.skill__percentage > div > div{
+    background-color: rgb(255, 174, 52);
+    height: 3px;
+}
+
+.skill__percentage > p {
+    /* margin-inline-start: 2rem; */
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+.skill__items {
+    font-size: 12px;
+    margin-block-start: -0.25rem;
+}

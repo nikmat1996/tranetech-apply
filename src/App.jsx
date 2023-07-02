@@ -6,6 +6,8 @@ import SubModal from './components/SubModal'
 import BlackMonitor from './components/BlackMonitor'
 import CarousalMain from './components/CarousalMain'
 import InfinteCarousal from './components/InfinteCarousal'
+import Skills from './components/Skills'
+import Quotes from './components/Quotes'
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
       <BlackMonitor />
       <CarousalMain />
       <InfinteCarousal />
+      <Skills />
+      <Quotes />
     </>
   )
 }
