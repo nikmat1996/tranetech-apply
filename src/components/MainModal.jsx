@@ -37,7 +37,7 @@ const MainModal = () => {
   return (
     <section className="mainModal">
       <div style={BGIMG__STYLE}className="mainModal__imgBg">
-        {show && (<img className="mainModal__img" src={data[index].img_1b} alt="" />)}
+        {show && (<div className="img__wrapper"><img className="mainModal__img" src={data[index].img_1b} alt="" /></div>)}
         {show && (
           <div className="wrapper">
             <div className="mainModal__animatedBox">

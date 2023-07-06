@@ -164,24 +164,30 @@
 
 @media (max-width: 628px){
   .mainModal__imgBg {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+   
     height: 100vh;
   }
 
+  .img__wrapper{
+    min-height: 50vh;
+  }
+
+  .mainModal__img {
+    padding-block-start: 10vh;
+  }
 
   .wrapper{
     position: static;
+    height: 40vh;
   }
   .mainModal__animatedBox{
     margin-inline: auto;
+    margin-block-start: 5vh;
     width: 75vw;
     height: 0;
     animation: trialAnimation 500ms ease-in-out forwards ;
-
   }
-
+  
   @keyframes trialAnimation {
     to {
       height: min(calc(75vw * 350/610), 350px);
