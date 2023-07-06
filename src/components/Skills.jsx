@@ -12,7 +12,6 @@ const Skills = () => {
 
     useEffect(() => {
         const cb = ([{isIntersecting}]) => {
-            console.log(isIntersecting, "isIntersecting")
             if (isIntersecting)
                 setIsVisible(true)
         }
@@ -34,7 +33,7 @@ const Skills = () => {
             <div className='skills_section-right' ref={skillsRef}>
                 {
                     data.map(item => (
-                        <EachSkill data={item} isVisible={isVisible} />
+                        <EachSkill key={item.skill} data={item} isVisible={isVisible} />
                     ))
                 }
             </div>
