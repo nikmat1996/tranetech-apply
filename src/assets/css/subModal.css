@@ -3,7 +3,7 @@
   width: 90%;
   max-width: 1100px;
   margin-inline: auto;
-  padding-block: 10em;
+  padding-block: 10vw;
   gap: 5vw;
   flex-wrap: wrap;
 }
@@ -120,3 +120,9 @@
   line-height: 24px;
   text-align: justify;
 }
+
+/* @media (max-width: 628px){
+  .subModal {
+    padding: bloc;
+  }
+} */

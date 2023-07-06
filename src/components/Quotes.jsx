@@ -9,6 +9,7 @@ const Quotes = () => {
   
   const [pos, setPos] = useState(0);
   const [numOfItemsDisplayed, setNumOfItemsDisplayed] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
   
   const trackRef = useRef()
     const mouseOver = useRef(false)
@@ -34,10 +35,21 @@ const Quotes = () => {
       startAnimation()
     }
     return () => {
-      console.log('cleaning', pos)
       clearInterval(slideInterval)
     }
   }, [pos])
+
+  useEffect(() => { 
+
+    const cb = (entries) => {
+      if (entries[0].isIntersecting)
+        setIsVisible(true)
+    }
+    const observer = new IntersectionObserver(cb)
+
+    observer.observe(trackRef.current)
+
+  }, [])
 
   function addTransition(duration = 0) {
     for (let slide of trackRef.current.children) {
@@ -61,6 +73,10 @@ const Quotes = () => {
   const SLIDE_STYLE = {
     transform: `translateX(-${100 * pos}%)`,
   }
+
+  const TRACK_STYLE = {
+    transform: `translateY(-${isVisible ? 0 : -50}%)`,
+  }
  
   const handleMouseEnter = () => {
     mouseOver.current = true
@@ -78,7 +94,7 @@ const Quotes = () => {
                 <h2>our testimonials</h2>
                 <p>Our Clients are our biggest supporters. Hear what they have to say about us</p>
             </div>
-            <div className="track quoteTrack" ref={trackRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <div className="track quoteTrack" style={TRACK_STYLE} ref={trackRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             
             {[...data.map((item) => (
                 <div key={item.id} className="slide quoteSlide" style={SLIDE_STYLE}>

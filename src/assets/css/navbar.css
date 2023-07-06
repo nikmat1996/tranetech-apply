@@ -37,3 +37,9 @@
     min-height: 2.25rem;
     background-color: rgba(247,171,52,1);
 }
+
+@media (max-width:950px){
+    .navbar > ul :not(:first-child){
+        display: none;
+    }
+}

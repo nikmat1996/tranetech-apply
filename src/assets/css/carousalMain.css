@@ -11,7 +11,7 @@
     overflow: hidden;
     box-sizing: border-box;
     padding-block-end: 2rem; 
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.8s ease-in-out;
     transform: translateY(50%);
 }
 
@@ -22,4 +22,20 @@
     width: calc(100%/var(--numOfItemsDisplayed));
     padding: 1rem;
     transition: transform 0.3s ease-in-out;
+}
+
+.track_CarousalMain {
+    padding-block-end: 1rem;
+}
+
+@media (max-width: 1000px) {
+    .slide {
+        --numOfItemsDisplayed : 2
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        --numOfItemsDisplayed : 1
+    }
 }

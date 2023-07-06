@@ -13,13 +13,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 3vw;
 }
 
 .skill__percentage > div {
-    width: 96%;
-}
-
-.skill__percentage > div > div{
+    /* width: 100%; */
+    transition: width 2s ease;
     background-color: rgb(255, 174, 52);
     height: 3px;
 }
@@ -35,3 +34,4 @@
     font-size: 12px;
     margin-block-start: -0.25rem;
 }
+

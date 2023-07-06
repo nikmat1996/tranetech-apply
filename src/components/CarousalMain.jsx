@@ -9,6 +9,8 @@ const CarousalMain = () => {
   
   const [pos, setPos] = useState(0);
   const [numOfItemsDisplayed, setNumOfItemsDisplayed] = useState(3);
+  const [isVisible, setIsVisible] = useState(false);
+  
   
   const trackRef = useRef()
   const mouseOver = useRef(false)
@@ -33,10 +35,21 @@ const CarousalMain = () => {
       startAnimation()
     }
     return () => {
-      console.log('cleaning', pos)
       clearInterval(slideInterval)
     }
   }, [pos])
+
+  useEffect(() => { 
+
+    const cb = (entries) => {
+      if (entries[0].isIntersecting)
+        setIsVisible(true)
+    }
+    const observer = new IntersectionObserver(cb)
+
+    observer.observe(trackRef.current)
+
+  }, [])
 
   function addTransition(duration = 0) {
     for (let slide of trackRef.current.children) {
@@ -62,7 +75,7 @@ const CarousalMain = () => {
   }
 
   const TRACK_STYLE = {
-    transform: "translateY(0%)"
+    transform: `translateY(-${isVisible ? 0 : -50}%)`,
   }
  
   const handleMouseEnter = () => {
@@ -76,8 +89,8 @@ const CarousalMain = () => {
   }
 
   return (
-    <section className="carousal" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <div className="track" style={TRACK_STYLE} ref={trackRef}>
+    <section className="carousal" >
+      <div className="track track_CarousalMain" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={TRACK_STYLE} ref={trackRef}>
       
         {[...data.map((item) => (
           <div key={item.id} className="slide" style={SLIDE_STYLE}>

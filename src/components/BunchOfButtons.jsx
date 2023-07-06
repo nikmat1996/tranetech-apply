@@ -9,7 +9,10 @@ const BunchOfButtons = (props) => {
           <li
             key={i}
             className={'slide__button ' + (pos % data.length === i && 'active')}
-            onClick={() => setPos(i)}
+            onClick={() => {
+              console.log("clicked")
+              setPos(i)
+            }}
           />))
         }
       </ul>

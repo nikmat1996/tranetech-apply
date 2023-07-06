@@ -12,6 +12,8 @@ let slideInterval,
 const InfinteCarousal = () => {
   const [pos, setPos] = useState(0);
   const [numOfItemsDisplayed, setNumOfItemsDisplayed] = useState(3);
+  const [isVisible, setIsVisible] = useState(false);
+
 
   const trackRef = useRef();
   const mouseOver = useRef(false);
@@ -38,6 +40,17 @@ const InfinteCarousal = () => {
     };
   }, [pos]);
 
+  useEffect(() => { 
+
+    const cb = (entries) => {
+      if (entries[0].isIntersecting)
+        setIsVisible(true)
+    }
+    const observer = new IntersectionObserver(cb)
+    observer.observe(trackRef.current)
+
+  }, [])
+
   function addTransition(duration = 0) {
     for (let slide of trackRef.current.children) {
       slide.style.transition = `transform ${duration}ms ease-in-out`;
@@ -61,6 +74,11 @@ const InfinteCarousal = () => {
     transform: `translateX(-${100 * pos}%)`,
   };
 
+  const TRACK_STYLE = {
+    transform: `translateY(-${isVisible ? 0 : -50}%)`,
+  }
+ 
+
   const handleMouseEnter = () => {
     mouseOver.current = true;
     stopAnimation();
@@ -81,7 +99,7 @@ const InfinteCarousal = () => {
       <h2 className="carousal_section-h2">
         Innovative solutions to enhance and manage business better.
       </h2>
-      <div className="track track_secondCarousal" ref={trackRef}>
+      <div className="track track_secondCarousal" style={TRACK_STYLE} ref={trackRef}>
         {[
         ...data.map((item) => (
           <div key={item.h3} className="slide slide_secondCarousal" style={SLIDE_STYLE}>

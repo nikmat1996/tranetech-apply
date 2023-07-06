@@ -5,17 +5,22 @@
 
 .mainModal__imgBg {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  display: flex;
-  justify-content: end;
+  /* position: relative; */
+  /* justify-content: end; */
 }
 
 .mainModal__img {
+  box-sizing: border-box;
+  height: max-content;
+  max-width: 100%;
+  padding-inline: 5vw;
   opacity: 0;
   animation: opacity 700ms linear forwards;
+  display: block;
+  margin-inline-start: auto;
 }
 
 @keyframes opacity {
@@ -23,26 +28,35 @@
     opacity: 1;
   }
 }
-
-.mainModal__animatedBox {
-  width: 610px;
-  height: 0px;
-  background-color: #fff;
+.wrapper {
+  width: 100%;
   position: absolute;
   top: 15em;
-  left: clamp(5vw, 18vw, 18vw);
+}
+
+.mainModal__animatedBox {
+  width: min(60vw, 610px);
+  height: 0px;
+  background-color: rgb(249, 244, 244);
+  
+  margin-inline: auto;
+  margin-inline-start: min(20vw, 150px);
   opacity: 0.9;
   animation: trialAnimation 500ms ease-in-out forwards ;
+  display: grid;
+  place-items: center;
 }
 
 @keyframes trialAnimation {
   to {
-    height: 350px;
+    height: min(calc(60vw * 350/610), 350px);
   }
 }
 
 .mainModal__animatedBox-textWrapper {
-  padding: 10% 6.5rem;
+  /* padding: 2vw 6.5rem; */
+  width: max-content;
+  margin-inline: auto;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -51,16 +65,16 @@
 }
 
 .mainModal__animatedBox-textWrapper > div  > * {
-    position: relative;
+    /* position: relative; */
     margin: 0;
     color: rgb(35, 35, 35);
-    font-size: 3.5rem;
+    font-size: min(6vw, 55px);
     opacity: 0;
 }
 
 .mainModal__animatedBox-textWrapper  p {
     color: #faae34;
-    font-size: 0.9rem;
+    font-size: min(1vw, 14px);
     text-transform: uppercase;
     font-weight: 800;
     text-decoration: underline;
@@ -71,14 +85,14 @@
 
 .mainModal__animatedBox-textWrapper h1 {
     font-weight: 500;
-    padding-block-start: 1rem;
+    padding-block-start: 1vw;
     transform: translateY(-100%);
     animation: dropdown 0.3s ease-in-out 0.9s forwards;    
 
 }
 
 .mainModal__animatedBox-textWrapper h2 {
-    padding-block-start: 0.8rem;
+    padding-block: 0.8vw 1vw;
     white-space: normal;
     font-weight: 800;
     transform: translateY(-100%);
@@ -87,15 +101,15 @@
 
 .mainModal__animatedBox-button {
     font-family: "Montserrat", sans-serif;
-    padding-inline: 2.25rem;
-    padding-block: 1.25rem;
-    position: absolute;
-    inset: auto 1rem 0 auto;
+    padding-inline: min(2.25vw,2.25rem);
+    padding-block: min(1.25vw,1.25rem);
+    /* position: absolute;
+    inset: auto 1rem 0 auto; */
     background-color: rgb(250, 174, 52);
     font-weight: 600;
     box-shadow: rgb(153, 153, 153) 0px 0px 0px 0px;
     border: none;
-    font-size: 0.85rem;
+    font-size: min(1vw,13px);
     text-transform: uppercase;
     letter-spacing: -1px;
     color: rgb(255, 255, 255);
@@ -112,25 +126,84 @@
 }
 
 @keyframes dropdown {
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
+  to {
+      transform: translateY(0%);
+      opacity: 1;
+  }
 } 
     
 .mainModal__buttonWrapper {
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 100%;
-    position: absolute;
-    top: 15em;
-    padding-inline: 2em;
-    transform: translateY(175px);   
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: 2em;
+  /* position: absolute;
+  top: 15em; */
+  /* transform: translateY(175px);    */
 }
 
 .mainModal__buttonWrapper > button {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+
+@media (max-width: 929px){
+
+  .mainModal__animatedBox{
+    text-align: center;
+    height: max-content;
+  }
+
+  .mainModal__animatedBox-button {
+    /* position: static; */
+  }
+}
+
+
+@media (max-width: 628px){
+  .mainModal__imgBg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .mainModal__img {
+  }
+
+  .wrapper{
+    position: static;
+  }
+  .mainModal__animatedBox{
+    margin-inline: auto;
+    width: 75vw;
+    height: 0;
+    animation: trialAnimation 500ms ease-in-out forwards ;
+
+  }
+
+  @keyframes trialAnimation {
+    to {
+      height: min(calc(75vw * 350/610), 350px);
+    }
+  }
+  
+
+  .mainModal__animatedBox-textWrapper > div  > * {
+    font-size: 26px;
+  }
+
+  .mainModal__animatedBox-textWrapper > div > p{
+    font-size: 11px;
+  }
+
+  .mainModal__animatedBox-button {
+    font-size: 11px;
+    margin-top: 0.5rem;
+  }
+  
+  .mainModal__buttonWrapper{
+    display: none;
+  }
 }

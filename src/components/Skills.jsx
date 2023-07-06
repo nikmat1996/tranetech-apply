@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../assets/css/skills.css'
 import img from '../assets/images/ourskill_bgImg.webp';
 import { skillsData as data } from './DATA'
@@ -6,6 +6,21 @@ import EachSkill from './EachSkill';
 
 
 const Skills = () => {
+
+    const skillsRef = useRef()
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const cb = ([{isIntersecting}]) => {
+            console.log(isIntersecting, "isIntersecting")
+            if (isIntersecting)
+                setIsVisible(true)
+        }
+        const skillObserver = new IntersectionObserver(cb)
+
+        skillObserver.observe(skillsRef.current)
+    }, [])
+    
 
     const SKILLS_STYLE = {
         backgroundImage: `url(${img})`
@@ -16,10 +31,10 @@ const Skills = () => {
                 <h3>Our Skills</h3>
                 <h2>Optimal Integration of Information, Design, & Technology</h2>
             </div>
-            <div className='skills_section-right'>
+            <div className='skills_section-right' ref={skillsRef}>
                 {
                     data.map(item => (
-                        <EachSkill data={item} />
+                        <EachSkill data={item} isVisible={isVisible} />
                     ))
                 }
             </div>

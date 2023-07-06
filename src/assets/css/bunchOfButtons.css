@@ -4,7 +4,7 @@
     width: max-content;
     margin-inline: auto;
     padding: 0;
-    margin-block-start: -0.5rem;
+    margin-block-start: 0.5rem;
 }
 
 .slide__button {

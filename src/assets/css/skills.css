@@ -48,3 +48,22 @@
     flex-direction: column;
     gap: 1rem;
 }
+
+@media (max-width : 900px){
+    .skills_section {
+        flex-direction: column;
+    }
+
+    .skills_section-left {
+        padding-block: 3%;
+        text-align: center;
+    }
+    
+    .skills_section-left > h3{
+        margin-inline: auto;
+    }
+
+    .skills_section-right {
+        padding: 3% 6%;
+    }
+}
